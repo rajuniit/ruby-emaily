@@ -1,0 +1,23 @@
+
+<hr>
+
+<div class="jumbotron">
+  <h3>Looking to verify an email?</h3 >
+
+  <p class="lead">This email verification tool actually connects to the mail server and checks whether the mailbox exists or not.</p>
+  <%= form_tag email_checkers_path, :method => 'get', :id => "email-checker-form" do %>
+  <div class="input-append">
+    <%= text_field_tag :search, params[:search], :id => 'appendedInputButton', :class => 'span5', :placeholder => 'Enter an email here to verify...' %>
+    <!--<input class="span5" id="appendedInputButton" type="text" placeholder="Enter an email here to verify..." />-->
+    <%= submit_tag "Verify", :name => nil, :class => "btn btn-success" %>
+    <p id="loader"><%= image_tag "ajax-loader.gif" %></p>
+    <!--<button class="btn btn-success" type="button">Verify</button>-->
+    <% end %>
+  </div>
+
+  <div id="result-container">
+    <%= render 'search_results'  %>
+  </div>
+</div>
+
+<hr>

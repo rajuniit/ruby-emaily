@@ -1,0 +1,7 @@
+<% unless @response.nil? %>
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      Email format is <strong><%= @response[:email_format] ? 'valid' : 'invalid' %></strong> And
+      Email domain is <strong><%= @response[:email_domain] ? 'valid' : 'invalid' %></strong>.
+    </div>
+<% end %>
